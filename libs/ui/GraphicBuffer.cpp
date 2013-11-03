@@ -505,6 +505,17 @@ std::unique_ptr<DetachedBufferHandle> GraphicBuffer::takeDetachedBufferHandle() 
     return std::move(mDetachedBufferHandle);
 }
 
+#ifdef EXYNOS4_ENHANCEMENTS
+status_t GraphicBufferMapper::getphys(buffer_handle_t handle, void** paddr)
+{
+    status_t err;
+     err = mAllocMod->getphys(mAllocMod, handle, paddr);
+     ALOGW_IF(err, "getphys(%p) fail %d(%s)",
+    handle, err, strerror(-err));
+    return err;
+}
+#endif
+
 // ---------------------------------------------------------------------------
 
 }; // namespace android
