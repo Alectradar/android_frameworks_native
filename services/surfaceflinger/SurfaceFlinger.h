@@ -137,7 +137,7 @@ public:
     }
 
 #ifdef SWAP_BUFFERS_WORKAROUND
-    int getNumVisibleRegions();
+    int hasVisibleRegions();
 #endif
 
 private:
