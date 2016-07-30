@@ -19,6 +19,9 @@ endif
 ifeq (pa_angler,$(TARGET_PRODUCT))
     PRODUCT_MAKEFILES += $(LOCAL_DIR)/angler/pa_angler.mk
 endif
+ifeq (pa_i9300,$(TARGET_PRODUCT))
+    PRODUCT_MAKEFILES += $(LOCAL_DIR)/i9300/pa_i9300.mk
+endif
 ifeq (pa_deb,$(TARGET_PRODUCT))
     PRODUCT_MAKEFILES += $(LOCAL_DIR)/deb/pa_deb.mk
 endif
