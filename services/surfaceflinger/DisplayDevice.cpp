@@ -267,8 +267,6 @@ void DisplayDevice::swapBuffers(HWComposer& hwc) const {
             success = eglSwapBuffers(mDisplay, mSurface);
         else
             success = 1;
-#else
-        success = eglSwapBuffers(mDisplay, mSurface);
 #endif
         if (!success) {
             EGLint error = eglGetError();
