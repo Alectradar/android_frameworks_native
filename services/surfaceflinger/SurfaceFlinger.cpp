@@ -81,14 +81,6 @@
 #include <cutils/compiler.h>
 #include "DisplayUtils.h"
 
-#ifdef SAMSUNG_HDMI_SUPPORT
-#include "SecTVOutService.h"
-#endif
-
-#ifdef SAMSUNG_HDMI_SUPPORT
-#include "SecTVOutService.h"
-#endif
-
 #define DISPLAY_COUNT       1
 
 /*
@@ -192,16 +184,6 @@ SurfaceFlinger::SurfaceFlinger()
     }
     ALOGI_IF(mDebugRegion, "showupdates enabled");
     ALOGI_IF(mDebugDDMS, "DDMS debugging enabled");
-
-#ifdef SAMSUNG_HDMI_SUPPORT
-    ALOGD(">>> Run service");
-    android::SecTVOutService::instantiate();
-#if defined(SAMSUNG_EXYNOS5250)
-    mHdmiClient = SecHdmiClient::getInstance();
-    mHdmiClient->setHdmiEnable(1);
-#endif
-#endif
-
 }
 
 void SurfaceFlinger::onFirstRef()
